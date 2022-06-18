@@ -32,6 +32,7 @@ body {
   -webkit-font-smoothing: antialiased;
   font-family: "Montserrat", sans-serif;
   font-size: calc(16px + 0.75vw);
+  overflow: hidden;
 }
 /*
     6. Improve media defaults
@@ -108,6 +109,8 @@ h6 {
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  filter: drop-shadow(4px 4px 4px black);
+  -webkit-transform: translate3d(0, 0, 0);
 }
 
 .link-group {
@@ -124,11 +127,12 @@ h6 {
 .links {
   text-decoration: none;
   color: white;
-  border: 2px solid white;
+  border: 3px solid white;
   padding: 10px;
   border-radius: 40px;
-  flex: 1 1 0;
+  flex: 1 0 0;
   text-align: center;
+  white-space: nowrap;
 }
 
 .profile-image {
@@ -137,6 +141,8 @@ h6 {
   width: 100px;
   overflow: hidden;
   position: relative;
+  filter: drop-shadow(10px 10px 10px black);
+  -webkit-transform: translate3d(0, 0, 0);
 }
 
 .profile-image > img {
@@ -158,12 +164,15 @@ h6 {
   transition: all 0.2s;
 }
 
-.twt-overlay:hover {
-  opacity: 0.88;
-  transition: all 0.2s;
+@media (hover: hover) {
+  .twt-overlay:hover {
+    opacity: 0.88;
+    transition: all 0.2s;
+  }
 }
 
 .twt-overlay > img {
   width: 50%;
   height: 50%;
+  filter: drop-shadow(3px 3px 3px black);
 }
