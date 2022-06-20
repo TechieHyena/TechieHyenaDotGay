@@ -81,7 +81,8 @@ h6 {
 
 #overlay {
   aspect-ratio: 3/2;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   background: linear-gradient(
     120deg,
     rgba(132, 102, 193, 1) 0%,
