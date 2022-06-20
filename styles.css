@@ -3,12 +3,6 @@
 */
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
-@font-face {
-  font-family: WhiMedium;
-  src: url("font/whi-medium.otf") format("opentype");
-}
-
 *,
 *::before,
 *::after {
@@ -83,6 +77,7 @@ h6 {
   aspect-ratio: 3/2;
   height: 100vh;
   width: 100vw;
+  transform: scale(1.1);
   background: linear-gradient(
     120deg,
     rgba(132, 102, 193, 1) 0%,
@@ -109,7 +104,7 @@ h6 {
 }
 
 #content-inner {
-  width: 50%;
+  width: 70%;
   color: white;
   display: flex;
   flex-direction: column;
@@ -164,9 +159,21 @@ h6 {
   gap: 20px;
 }
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 900px) {
   .link-group {
     display: grid;
+  }
+  .dh-logo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #content-inner {
+    padding-top: 10vh;
+    min-width: 80%;
+    font-size: 90%;
+  }
+  body {
+    overflow: scroll;
   }
 }
 
