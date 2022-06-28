@@ -1,8 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --blurple: #5865f2;
+}
+
 /*
   1. Use a more-intuitive box-sizing model.
 */
-
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 *,
 *::before,
 *::after {
@@ -83,7 +87,7 @@ h6 {
     rgba(132, 102, 193, 1) 0%,
     rgba(0, 20, 74, 1) 100%
   );
-  position: absolute;
+  position: fixed;
   opacity: 0.3;
 }
 
@@ -126,20 +130,34 @@ h6 {
   justify-content: center;
 }
 
+@media (hover: hover) {
+  .links,
+  .links:hover {
+    transition: all 0.2s;
+  }
+
+  .discord-button:hover {
+    background: rgb(121, 131, 245);
+  }
+
+  .link-group > a:hover {
+    background: white;
+    color: black;
+  }
+
+  .twt-overlay:hover {
+    opacity: 0.88;
+    transition: all 0.2s;
+  }
+}
+
 .discord-button {
-  background: #5865f2;
+  background: var(--blurple);
   border: transparent;
-  box-sizing: content-box;
   display: flex;
-  max-width: 12em;
   align-items: center;
   gap: 10px;
   padding: 10px 60px;
-}
-
-.discord-button:hover {
-  filter: brightness(70%);
-  transition: all 0.2s;
 }
 
 .discord-logo {
@@ -149,9 +167,6 @@ h6 {
   max-width: 50px;
   min-width: 40px;
   padding-right: 7px;
-
-  max-height: 100%;
-  min-height: 90%;
 }
 
 .link-group {
@@ -159,18 +174,55 @@ h6 {
   gap: 20px;
 }
 
-@media only screen and (max-width: 900px) {
-  .link-group {
-    display: grid;
+#dh-logo-wide {
+  width: 350px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+#dh-logo-small {
+  width: 350px;
+  box-sizing: border-box;
+  display: none;
+}
+
+#intro-text {
+  font-weight: bold;
+  width: calc(100% * 2 / 3);
+  text-align: center;
+}
+
+@media screen and (min-aspect-ratio: 4/3) and (max-height: 600px) {
+  #content {
+    height: unset;
+    padding: 20px;
   }
-  .dh-logo {
-    margin-left: auto;
-    margin-right: auto;
+}
+
+@media only screen and (max-width: 1000px) {
+  .link-group {
+    flex-direction: column;
+    align-items: center;
+  }
+  .links:not(.discord-button) {
+    width: 300px;
+  }
+  .discord-button {
+    margin-top: 20px;
+  }
+  #dh-logo-wide {
+    display: none;
+  }
+  #dh-logo-small {
+    display: block;
+  }
+  #intro-text {
+    width: unset;
   }
   #content-inner {
-    padding-top: 10vh;
     min-width: 80%;
     font-size: 90%;
+    gap: 20px;
   }
   body {
     overflow: scroll;
@@ -186,12 +238,6 @@ h6 {
     width: 50%;
     min-width: 33%;
   }
-}
-
-.link-group > a:hover {
-  background: white;
-  color: black;
-  transition: all 0.2s;
 }
 
 .profile-image {
@@ -221,13 +267,6 @@ h6 {
   background: #5498ec;
   opacity: 0;
   transition: all 0.2s;
-}
-
-@media (hover: hover) {
-  .twt-overlay:hover {
-    opacity: 0.88;
-    transition: all 0.2s;
-  }
 }
 
 .twt-overlay > img {
